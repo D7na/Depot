@@ -8,9 +8,27 @@
 
 Product.delete_all
 
-Product.create(title: 'Programming Ruby 2.0',
-               description: 'Ruby is the fastest growing and most
-exciting dynamic language out there. If you need to get working programs
-delivered fast, you should add Ruby to you toolbox.',
-               image_url: ruby.jpg,
-               price: 49.95)
+Product.create(title: '1-к квартира ул. Партизанская, 196',
+               description: %{Продается квартира в Советском районе, 30м2 5/5 эт.},
+               image_url: 'home.jpg',
+               price: 2000000)
+
+Product.create(title: '2-к квартира ул. Партизанская, 173',
+               description: %{Продается квартира в Советском районе, 42м2, 3/5 эт.},
+               image_url: 'home.jpg',
+               price: 2200000)
+
+Product.create(title: '2-к квартира ул. Партизанская, 230',
+               description: %{Продается квартира в Советском районе, 44м2, 2/5 эт.},
+               image_url: 'home.jpg',
+               price: 2280000)
+
+Product.create(title: '1-к квартира ул. Партизанская, 226',
+               description: %{Продается квартира в Советском районе, 36м2, 1/5 эт.},
+               image_url: 'home.jpg',
+               price: 1850000)
+
+Product.create(title: '2-к квартира ул. Аэродромная, 96',
+               description: %{Продается квартира в Советском районе, 46м2, 6/9 эт.},
+               image_url: 'home.jpg',
+               price: 2350000)

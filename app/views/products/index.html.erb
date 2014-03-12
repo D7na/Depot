@@ -12,6 +12,7 @@
             <dt><%= product.title %></dt>
             <dd><%= truncate(strip_tags(product.description),
                               length: 80) %></dd>
+            <dd>Цена: <%= product.price %></dd>
           </dl>
         </td>
 
@@ -19,7 +20,8 @@
           <%= link_to 'Show', product %> <br/>
           <%= link_to 'Edit', edit_product_path(product) %> <br/>
           <%= link_to 'Destroy', product,
-                      confirm: 'Are you sure?',
+                      data: {confirm: 'Are you sure?'},
+                      #confirm: 'Are you sure?',
                       method: :delete %>
         </td>
       </tr>
