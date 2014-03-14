@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+  has_many :line_items
+  before_destroy :ensure_not_referenced_by_any_line_item
+
 validates :title, :description, :image_url, presence: true
 validates :price, numericality: {greater_than_or_equal_to: 1}
 validates :title, uniqueness: true, :length => {minimum: 10}
@@ -7,4 +10,13 @@ validates :image_url, allow_blank: true, format: {
     message: 'URL должен указывать на изображение формата GIF, JPG или PNG.'
 }
 
+  private
+  def ensure_not_referenced_by_any_line_item
+    if line_items.empty?
+      return true
+    else
+      errors.add(:base, 'Существуют товарные позиции')
+      return false
+    end
+  end
 end

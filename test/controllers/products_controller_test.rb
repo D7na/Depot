@@ -3,7 +3,7 @@ I18n.enforce_available_locales = false
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
-    @product = products(:one)
+    @product = products(:apartment)
     @update =  {
         title: 'Lorem ipsum',
         description: 'Wibbles are fun',
