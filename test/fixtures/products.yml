@@ -1,8 +1,7 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
-apartment:
-  title: 1-к квартира ул. Партизанская, 196
-  description: Продается квартира в Советском районе, 30м2 5/5 эт.
-  image_url: home.jpg
-  price: 2000000
-
+ruby:
+  title: MyString,
+  description: MyText,
+  image_url: MyString,
+  price: 9.99

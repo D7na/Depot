@@ -3,7 +3,7 @@ I18n.enforce_available_locales = false
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
-    @product = products(:apartment)
+    @product = products(:ruby)
     @update =  {
         title: 'Lorem ipsum',
         description: 'Wibbles are fun',
@@ -27,7 +27,6 @@ class ProductsControllerTest < ActionController::TestCase
     assert_difference('Product.count') do
       post :create, product: @update
     end
-
     assert_redirected_to product_path(assigns(:product))
   end
 

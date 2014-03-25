@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class CartsControllerTest < ActionController::TestCase
+
   setup do
-    @cart = carts(:one)
+    @cart = carts(:ruby)
   end
 
   test "should get index" do
@@ -20,7 +21,6 @@ class CartsControllerTest < ActionController::TestCase
     assert_difference('Cart.count') do
       post :create, cart: {  }
     end
-
     assert_redirected_to cart_path(assigns(:cart))
   end
 
@@ -35,16 +35,15 @@ class CartsControllerTest < ActionController::TestCase
   end
 
   test "should update cart" do
-    patch :update, id: @cart, cart: {  }
+    put :update, :id => @cart.to_param, :cart => @cart.attributes
     assert_redirected_to cart_path(assigns(:cart))
   end
 
   test "should destroy cart" do
     assert_difference('Cart.count', -1) do
-      session[:cart_id] = @cart.id
-      delete :destroy, id: @cart.to_param
-    end
-
+    session[:cart_id] = @cart.id
+      delete :destroy, id: @cart
+  end
     assert_redirected_to store_path
   end
 end
