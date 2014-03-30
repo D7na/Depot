@@ -5,18 +5,24 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:appname_development</jdbc-url>
+      <user-name>dmitry</user-name>
+      <user-password>df9ddf9adf9fdf9edf93df93</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails depot: test" uuid="fdd42a12-973c-4ae3-aaa8-ab1a2af8e9a1">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:appname_test</jdbc-url>
+      <user-name>dmitry</user-name>
+      <user-password>df9ddf9adf9fdf9edf93df93</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails depot: production" uuid="a5f9e0af-0da7-46fd-bebc-89012d9a33fa">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:appname_production</jdbc-url>
+      <user-name>dmitry</user-name>
+      <user-password>df9ddf9adf9fdf9edf93df93</user-password>
       <libraries />
     </data-source>
   </component>
