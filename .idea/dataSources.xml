@@ -21,8 +21,6 @@
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:appname_production</jdbc-url>
-      <user-name>dmitry</user-name>
-      <user-password>df9ddf9adf9fdf9edf93df93</user-password>
       <libraries />
     </data-source>
   </component>
