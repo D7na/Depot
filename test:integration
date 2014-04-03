@@ -1,0 +1,54 @@
+Run options: --seed 44646
+
+# Running tests:
+
+..E...E.......EEEE...F..........E
+
+Finished tests in 2.278292s, 14.4845 tests/s, 21.0684 assertions/s.
+
+  1) Error:
+CartsControllerTest#test_should_get_edit:
+NoMethodError: undefined method `symbolize_keys' for "207281424":String
+    test/controllers/carts_controller_test.rb:33:in `block in <class:CartsControllerTest>'
+
+  2) Error:
+CartsControllerTest#test_should_update_cart:
+NameError: undefined local variable or method `cart_params' for #<CartsController:0xb497694>
+    app/controllers/carts_controller.rb:58:in `block in update'
+    app/controllers/carts_controller.rb:57:in `update'
+    test/controllers/carts_controller_test.rb:38:in `block in <class:CartsControllerTest>'
+
+  3) Error:
+OrderNotifierTest#test_received:
+ActionView::Template::Error: undefined method `title' for nil:NilClass
+    app/views/line_items/_line_item.text.erb:3:in `_app_views_line_items__line_item_text_erb___217090763_87598940'
+    app/views/order_notifier/received.text.erb:7:in `_app_views_order_notifier_received_text_erb___313660219_87769640'
+    app/mailers/order_notifier.rb:12:in `received'
+    test/mailers/order_notifier_test.rb:5:in `block in <class:OrderNotifierTest>'
+
+  4) Error:
+OrderNotifierTest#test_shipped:
+ArgumentError: wrong number of arguments (1 for 0)
+    app/mailers/order_notifier.rb:20:in `shipped'
+    test/mailers/order_notifier_test.rb:13:in `block in <class:OrderNotifierTest>'
+
+  5) Error:
+OrdersControllerTest#test_requires_item_in_cart:
+NameError: undefined local variable or method `store_patch' for #<OrdersControllerTest:0xa550a78>
+    test/controllers/orders_controller_test.rb:16:in `block in <class:OrdersControllerTest>'
+
+  6) Error:
+OrdersControllerTest#test_should_create_order:
+NoMethodError: undefined method `store_patch' for #<OrdersControllerTest:0x9662228>
+    test/controllers/orders_controller_test.rb:30:in `block in <class:OrdersControllerTest>'
+
+  7) Failure:
+OrdersControllerTest#test_should_get_new [/home/dmitry/Depot/test/controllers/orders_controller_test.rb:22]:
+Expected response to be a <success>, but was <302>
+
+  8) Error:
+UserStoriesTest#test_buying_a_product:
+StandardError: No fixture named 'one' found for fixture set 'products'
+    test/integration/user_stories_test.rb:8:in `block in <class:UserStoriesTest>'
+
+33 tests, 48 assertions, 1 failures, 7 errors, 0 skips
