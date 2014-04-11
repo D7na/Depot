@@ -1,7 +1,6 @@
 class CartsController < ApplicationController
   require 'current_cart'
   include CurrentCart
-
   #before_action :set_cart, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
@@ -77,9 +76,11 @@ class CartsController < ApplicationController
     end
   end
 
-private
+  skip_before_action :authorize, only: [:create, update, :destroy]
 
-def invalid_cart
+  private
+
+  def invalid_cart
   logger.error "Attempt to access invalid cart #{params[:id]}"
   redirect_to store_url, notice: 'Invalid cart'
   end
