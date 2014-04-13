@@ -56,13 +56,11 @@ class UsersController < ApplicationController
   def destroy
     begin
     @user.destroy
-    flash[:notice] = "Пользователь #{@user.name} удален"
-    rescue StandardError => e
-      flash[:notice] = e.message
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to users_url, notice: "Пользователь #{@user.name} удален" }
       format.json { head :no_content }
     end
+
   end
 end
   

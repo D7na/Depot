@@ -1,8 +1,9 @@
 class CartsController < ApplicationController
   require 'current_cart'
   include CurrentCart
-  #before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
+  skip_before_action :authorize, only: [:create, :update, :destroy]
 
   # GET /carts
   # GET /carts.json
@@ -54,6 +55,7 @@ class CartsController < ApplicationController
 #  PATCH/PUT /carts/1.json
   def update
     respond_to do |format|
+      #if @cart.update(params[:cart])
       if @cart.update(cart_params)
         format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
         format.json { head :no_content }
@@ -69,19 +71,16 @@ class CartsController < ApplicationController
   def destroy
   @cart = current_cart
   @cart.destroy
-
-    respond_to do |format|
-      format.html { redirect_to store_url }
+  respond_to do |format|
+      format.html { redirect_to store_url, notice: 'Cart was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-
-  skip_before_action :authorize, only: [:create, update, :destroy]
-
-  private
-
-  def invalid_cart
-  logger.error "Attempt to access invalid cart #{params[:id]}"
-  redirect_to store_url, notice: 'Invalid cart'
-  end
 end
+
+private
+  def invalid_cart
+    logger.error "Attempt to access invalid cart #{params[:id]}"
+    redirect_to store_url, notice: 'Invalid cart'
+  end
+
